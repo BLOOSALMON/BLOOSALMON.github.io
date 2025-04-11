@@ -197,6 +197,7 @@ plt.xlabel('Predict')
 plt.ylabel('REesidual')
 plt.title('Residual Analysis')
 plt.show()
+```
 
 ![download](https://github.com/user-attachments/assets/2418e69d-14d4-4170-99e6-28614a20f0f6)
 
