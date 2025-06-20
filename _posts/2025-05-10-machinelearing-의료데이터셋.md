@@ -61,13 +61,13 @@ thalach    : -0.41
 
 [함수 및 변수 설명]
 
-`figsize=(12, 4)` : 그래프 크기 (가로 12, 세로 4)
-`title="..."`     : 그래프 제목
-`fontsize=12`     : x축, y축 라벨 폰트 크기       
-`rot=90`          : x축 라벨 90도 회전 (읽기 편하게) 
-`grid=True`       : 그래프에 눈금선 표시           
+`figsize=(12, 4)` : 그래프 크기 (가로 12, 세로 4)   
+`title="..."`     : 그래프 제목    
+`fontsize=12`     : x축, y축 라벨 폰트 크기           
+`rot=90`          : x축 라벨 90도 회전 (읽기 편하게)     
+`grid=True`       : 그래프에 눈금선 표시               
 
-상관관계가 높은 데이터를 사용할 수록 모델 성능이 좋아질 가능성이 높다,
+상관관계가 높은 데이터를 사용할 수록 모델 성능이 좋아질 가능성이 높다.
 
 
 ![download](https://github.com/user-attachments/assets/d6f9ba02-6b18-4250-bd62-e1a471d48873)
@@ -82,7 +82,7 @@ sns.scatterplot(x = 'age', y = 'thalach', hue = 'target', data = X_cp) # 색이 
 ![download](https://github.com/user-attachments/assets/638ba762-e366-4538-b323-c4f252b751d8)
 
 ```
-X_cp.corrwith(X_cp['target']).plot.bar( # 각 열과 y 값의 상관계수
+X_cp.corrwith(X_cp['target']).plot.bar() # 각 열과 y 값의 상관계수
     figsize = (12,4), title = "Correlation with Diabetes", fontsize = 12,
         rot = 90, grid = True)
 ```
@@ -303,7 +303,6 @@ X_train_R = X_train.dropna() # NAN 값 있는 행 삭제 how = 'any' : 한개라
 ```
 로 지우고
 ```
-```
 from sklearn.preprocessing import MinMaxScaler
 scaler = MinMaxScaler()
 
@@ -314,12 +313,12 @@ X_train_R.head() # 범주화, 정규화
 ```
 로 정규화 및 범주화를 진행했다.
 
-age	sex	cp	trestbps	chol	fbs	restecg	thalach	exang	oldpeak	slope	ca	thal	target
-132	0.000000	1.0	0.333333	0.339623	0.178082	0.0	1.0	1.000000	0.0	0.000000	0.0	0.000000	0.00	0.00
-215	0.562500	1.0	0.000000	0.245283	0.152968	0.0	1.0	0.694656	0.0	0.306452	0.5	0.000000	1.00	0.00
-213	0.770833	0.0	1.000000	0.792453	0.232877	1.0	0.0	0.717557	1.0	0.161290	0.5	0.666667	1.00	0.75
-229	0.770833	1.0	1.000000	0.169811	0.196347	0.0	1.0	0.465649	1.0	0.016129	0.0	0.333333	0.00	0.50
-286	0.604167	0.0	1.000000	0.716981	0.226027	1.0	1.0	0.572519	1.0	0.451613	0.5	0.666667	0.75	0.50
+  age	 sex 	cp	 trestbps	 chol	 fbs 	restecg	 thalach 	exang 	oldpeak	 slope	 ca	 thal	 target     
+132	0.000000	1.0	0.333333	0.339623	0.178082	0.0	1.0	1.000000	0.0	0.000000	0.0	0.000000	0.00	0.00    
+215	0.562500	1.0	0.000000	0.245283	0.152968	0.0	1.0	0.694656	0.0	0.306452	0.5	0.000000	1.00	0.00     
+213	0.770833	0.0	1.000000	0.792453	0.232877	1.0	0.0	0.717557	1.0	0.161290	0.5	0.666667	1.00	0.75     
+229	0.770833	1.0	1.000000	0.169811	0.196347	0.0	1.0	0.465649	1.0	0.016129	0.0	0.333333	0.00	0.50     
+286	0.604167	0.0	1.000000	0.716981	0.226027	1.0	1.0	0.572519	1.0	0.451613	0.5	0.666667	0.75	0.50     
 ```
 from sklearn import model_selection
 from sklearn.neighbors import KNeighborsClassifier
