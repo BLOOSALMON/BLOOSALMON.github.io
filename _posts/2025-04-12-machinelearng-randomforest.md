@@ -200,10 +200,10 @@ print(model.score(x_test, y_test))
 -0.06942547428034063
 
 일단 오차값이 거의 20로 너무 크고, 훈련데이터와의 차이가 너무 발생했다.
-test 데이터에 대한 점수가 음수..
+test 데이터에 대한 점수가 음수..        
 => 훈련 데이터에 과적합 가능, 일반화 성능 낮음   
          
-내가 보기엔 y_data 로그변환으로 오히려 데이터가 불균형해져서 오히려 안하는 게 나을 듯. (여기서 로그를 취하지 않아야 함을 알았다!)   
+내가 보기엔 y_data 로그변환으로 오히려 데이터가 불균형해져서 오히려 안하는 게 나을 듯.            (여기서 로그를 취하지 않아야 함을 알았다!)   
 
 + 평균 제곱 오차 값이 크면 모델이 문제일 수도 있음     
     
@@ -233,7 +233,7 @@ plt.show()
 4. 변수 중요도에서 중요도 0인 변수 삭제 (노이즈 제거)      
 5. stratify : test, train 비융 고려해 균형있게      
 
-변경
+### 변경
 ```
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, stratify=y, random_state = 42)
 model = pipe_.fit(x_train, y_train)
@@ -250,7 +250,7 @@ Test RMSE: 18.77236984838066
 
 라벨 인코딩으로 변환해주어도 score 결과는 그대로이다.       
 라벨 인코딩 : 원-핫 인코딩과는 다르게 0과 1이 아닌 0~n-1의 수치 변환을 지원해 특징의 수를 더 줄일 수 있다.      
-다만 한 줄에 대해서만 지원하니, ColumnTransfer나 pipe라인 안에는 넣지 않고ㅗ, 범주형 변수와 for문을 사용해 따로 df을 바꿔주야 한다.    
+다만 한 줄에 대해서만 지원하니, ColumnTransfer나 pipe라인 안에는 넣지 않고, 범주형 변수와 for문을 사용해 따로 바꿔주야 한다.    
 ```
 cat_features = ['Counseling Attendance','Stress Coping Mechanisms','Family Mental Health History','Medical Condition','Gender']
 label_encoders = {}
